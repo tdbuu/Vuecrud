@@ -44,6 +44,42 @@
         "contact_email": "jwade@codewrit.com",
         "acquired_on": "2020-04-03",
         "customer_status": "active"
+      },
+      {
+        "id": 6,
+        "company_name": "Code Writers AAAAAA222",
+        "contact_firstname": "Jill Holder",
+        "contact_lastname": "Wader",
+        "contact_email": "jwade@gmail.com",
+        "acquired_on": "2020-04-03",
+        "customer_status": "active"
+      },
+      {
+        "id": 7,
+        "company_name": "Code Writers AAAAAeeeeA222",
+        "contact_firstname": "Jill Holder",
+        "contact_lastname": "Wader",
+        "contact_email": "jwade@gmail.com",
+        "acquired_on": "2020-04-03",
+        "customer_status": "active"
+      },
+      {
+        "id": 9,
+        "company_name": "Code Writers AAAAcccAA222",
+        "contact_firstname": "Jill Holder",
+        "contact_lastname": "Wader",
+        "contact_email": "jwade@gmail.com",
+        "acquired_on": "2020-04-03",
+        "customer_status": "active"
+      },
+      {
+        "id": 9,
+        "company_name": "Code Writers AAAAbbbbAA222",
+        "contact_firstname": "Jill Holder",
+        "contact_lastname": "Wader",
+        "contact_email": "jwade@gmail.com",
+        "acquired_on": "2020-04-03",
+        "customer_status": "active"
       }
     ]
 }

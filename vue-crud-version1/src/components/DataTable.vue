@@ -35,12 +35,16 @@
           </b-col>
         </b-row>
         <b-row class="mt-3">
+           <p class="mt-3">Current Page: {{ currentPage }}</p>
           <b-table
             striped
             hover
             :items="items"
             :fields="fields"
+            :per-page="perPage"
+            :current-page="currentPage"
             class="text-center"
+            id="my-table"
           >
             <template #cell(contact_name)="data">
               {{
@@ -76,6 +80,12 @@
               </b-row>
             </template>
           </b-table>
+          <b-pagination
+            v-model="currentPage"
+            :total-rows="rows"
+            :per-page="perPage"
+            aria-controls="my-table">
+        </b-pagination>
         </b-row>
       </b-card>
     </b-row>
@@ -142,8 +152,8 @@ export default {
   },
   data() {
     return {
-      // Note 'isActive' is left out and will not appear in the rendered table
-
+      perPage: 3,
+      currentPage: 1,
       fields: [
         {
           key: "company_name",
@@ -180,6 +190,11 @@ export default {
   },
   mounted() {
     this.getCustomerData();
+  },
+  computed:{
+     rows(){
+        return this.items.length
+     }
   },
   methods: {
     showCreateModal() {
@@ -238,6 +253,16 @@ export default {
       this.showSuccessAlert = true;
       this.alertMessage = "Customer was deleted successfully!";
     },
+    // paginate(page_size, page_number) {
+    //   let itemsToParse = this.items;
+    //   this.paginatedItems = itemsToParse.slice(
+    //     page_number * page_size,
+    //     (page_number + 1) * page_size
+    //   );
+    // },
+    // onPageChanged(page) {
+    //   this.paginate(this.perPage, page - 1);
+    // }
   },
 };
 </script>
