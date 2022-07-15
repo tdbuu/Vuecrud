@@ -36,13 +36,19 @@
         </b-row>
         <b-row class="mt-3">
            <p class="mt-3">Current Page: {{ currentPage }}</p>
+              <!--Filter-->
+              <b-input-group class="mt-3 mb-3" size="sm">
+                <b-form-input v-model="keyword" placeholder="Search" type="text"></b-form-input>
+              </b-input-group>
+
           <b-table
             striped
             hover
-            :items="items"
+            :items="item"
             :fields="fields"
             :per-page="perPage"
             :current-page="currentPage"
+            :keyword="keyword"
             class="text-center"
             id="my-table"
           >
@@ -154,6 +160,7 @@ export default {
     return {
       perPage: 3,
       currentPage: 1,
+      keyword: '',
       fields: [
         {
           key: "company_name",
@@ -192,9 +199,12 @@ export default {
     this.getCustomerData();
   },
   computed:{
-     rows(){
+    rows(){
         return this.items.length
-     }
+     },
+    item () {
+			return this.keyword ? this.items.filter(item => item.company_name.includes(this.keyword) || item.contact_email.includes(this.keyword)) : this.items
+		}
   },
   methods: {
     showCreateModal() {
