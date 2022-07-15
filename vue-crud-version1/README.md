@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Install Library: 
+- Bootstrap Vue : npm install bootstrap bootstrap-vue 
+- Json Mock Data : npm install -g json-server
+  Run Json Mock Server : json-server --watch db.json
